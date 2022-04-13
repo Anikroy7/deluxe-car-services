@@ -4,14 +4,14 @@ import Header from './pages/shared/Header/Header';
 import Footer from './pages/shared/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import About from './pages/About/About';
-import Services from './pages/Home/Services/Services';
+import Home from './pages/Home/Home/Home';
 
 function App() {
   return (
     <div>
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Services></Services>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
       </Routes>
       <Footer></Footer>
