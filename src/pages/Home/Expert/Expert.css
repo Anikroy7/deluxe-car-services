@@ -2,3 +2,18 @@
     border: 2px solid darkkhaki;
     background-color: rgb(201, 193, 183);
 }
+
+.expert-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(63, 65, 65);
+    border: none;
+    color: aliceblue;
+
+}
+
+
+
+.expert-btn:hover {
+    background-color: rgb(37, 36, 36);
+}

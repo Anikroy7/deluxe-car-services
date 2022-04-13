@@ -11,7 +11,7 @@ const Service = ({ service }) => {
             <h2>Name: {name}</h2>
             <h5>Price: {price}</h5>
             <p>{description}</p>
-            <button>book: {name}</button>
+            <button className='rounded-bottom'>book: {name}</button>
         </div>
     );
 };
