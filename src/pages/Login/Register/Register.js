@@ -18,9 +18,9 @@ const Register = () => {
         <div className='resgister-main-container'>
             <h1 className='register-title'>Register Please</h1>
             <form onSubmit={handelRegister} className='register-container'>
-                <input className='px-2' type="text" name="name" placeholder='Your name' id="" />
-                <input className='px-2' type="email" name="email" placeholder='Your email' id="" />
-                <input className='px-2' type="password" name="password" placeholder='Your password' id="" />
+                <input className='px-2' type="text" name="name" placeholder='Your name' id="" required />
+                <input className='px-2' type="email" name="email" placeholder='Your email' id="" required />
+                <input className='px-2' type="password" name="password" placeholder='Your password' id="" required />
                 <p>Already have an account? <small className='sign-up-btn' onClick={handelNavigateToLogin}>Login </small></p>
                 <input className='register-btn' type="submit" value="Register" />
             </form>
