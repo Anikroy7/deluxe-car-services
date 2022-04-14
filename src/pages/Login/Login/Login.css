@@ -1,0 +1,11 @@
+.sign-up-btn {
+    color: rgb(65, 59, 71);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.sign-up-btn:hover {
+    color: rgb(252, 169, 176);
+    text-decoration: underline;
+}
