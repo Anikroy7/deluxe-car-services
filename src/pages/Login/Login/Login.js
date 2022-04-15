@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SociaLogin/SocialLogin';
 
 const Login = () => {
     let errorElement;
@@ -60,6 +61,7 @@ const Login = () => {
             <Button variant="secondary" type="submit">
                 Submit
             </Button>
+            <SocialLogin></SocialLogin>
         </Form >
     );
 };

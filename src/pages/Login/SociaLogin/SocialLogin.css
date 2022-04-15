@@ -1,0 +1,23 @@
+.social-login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-login-container button {
+    display: block;
+    border: 0;
+    margin-top: 10px;
+    background-color: rgb(56, 56, 83);
+    color: #ffff;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    transition-duration: 1s;
+
+}
+
+.social-login-container button:hover {
+    background-color: rgb(85, 44, 44)
+}
