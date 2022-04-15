@@ -1,19 +1,24 @@
 import React, { useRef } from 'react';
 import './Login.css'
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SociaLogin/SocialLogin';
 
 const Login = () => {
     let errorElement;
+    let loadingStatus = false;
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+    console.log(from);
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
@@ -21,7 +26,11 @@ const Login = () => {
         navigate('/register')
     }
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
+    }
+
+    if (loading) {
+        loadingStatus = true;
     }
 
     if (error) {
@@ -40,6 +49,11 @@ const Login = () => {
 
     return (
         <Form onSubmit={handleLogIn} className='w-50 border m-4 p-4 rounded mx-auto'>
+            {loadingStatus &&
+                <div className="spinner-border position-absolute bottom-50 end-50" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            }
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Text className="text-muted">

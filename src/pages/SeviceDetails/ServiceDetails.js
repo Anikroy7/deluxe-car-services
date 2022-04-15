@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ServiceDetails = () => {
 
@@ -8,7 +8,13 @@ const ServiceDetails = () => {
     return (
         <div>
             <h2>this is service detail: {serviceId}</h2>
-        </div>
+            <div className=' text-center'>
+                <Link to={'/cheakout'}>
+                    <button className='btn btn-dark hover:bg-info '>Procced Chekout</button>
+
+                </Link>
+            </div>
+        </div >
     );
 };
 
