@@ -48,35 +48,39 @@ const Login = () => {
     }
 
     return (
-        <Form onSubmit={handleLogIn} className='w-50 border m-4 p-4 rounded mx-auto'>
-            {loadingStatus &&
-                <div className="spinner-border position-absolute bottom-50 end-50" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            }
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Text className="text-muted">
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+        <div>
+            <Form onSubmit={handleLogIn} className='w-50 border m-4 p-4 rounded mx-auto'>
+                {loadingStatus &&
+                    <div className="spinner-border position-absolute bottom-50 end-50" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                }
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Text className="text-muted">
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                        We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-            </Form.Group>
-            {errorElement}
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                </Form.Group>
+                {errorElement}
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
 
-            <p>New to Deluxe car service? <span className='sign-up-btn' onClick={handelNavigateToRegister}>Register please</span></p>
-            <Button variant="secondary" type="submit">
-                Submit
-            </Button>
+                <p>New to Deluxe car service? <span className='sign-up-btn' onClick={handelNavigateToRegister}>Register please</span></p>
+                <Button variant="secondary" type="submit">
+                    Submit
+                </Button>
+            </Form >
             <SocialLogin></SocialLogin>
-        </Form >
+        </div>
+
+
     );
 };
 
