@@ -2,7 +2,7 @@
 import './App.css';
 import Header from './pages/shared/Header/Header';
 import Footer from './pages/shared/Footer/Footer';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import About from './pages/About/About';
 import Home from './pages/Home/Home/Home';
 import ServiceDetails from './pages/SeviceDetails/ServiceDetails';
@@ -11,6 +11,8 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import Cheakout from './pages/Cheakout/Cheakout/Cheakout';
+import AddService from './pages/AddService/AddService';
+import ManageServices from './pages/ManageServices/ManageServices';
 
 function App() {
   return (
@@ -30,6 +32,20 @@ function App() {
           }>
 
         </Route>
+        <Route path='/manage' element=
+          {
+            <RequireAuth>
+              <ManageServices></ManageServices>
+            </RequireAuth>
+          }>
+
+        </Route>
+
+        <Route path={'/addservice'} element={
+          <RequireAuth>
+            <AddService></AddService>
+          </RequireAuth>
+        }></Route>
         <Route path='register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

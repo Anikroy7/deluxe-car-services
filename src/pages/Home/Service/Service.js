@@ -10,7 +10,7 @@ const Service = ({ service }) => {
         navigate(`/service/${id}`)
     }
 
-    const { id, name, price, img, description } = service;
+    const { _id, name, price, img, description } = service;
     return (
         <div className='service-container'>
 
@@ -18,7 +18,7 @@ const Service = ({ service }) => {
             <h2>Name: {name}</h2>
             <h5>Price: {price}</h5>
             <p>{description}</p>
-            <button onClick={() => handelServiceDetails(id)} className='rounded-bottom'>book: {name}</button>
+            <button onClick={() => handelServiceDetails(_id)} className='rounded-bottom'>book: {name}</button>
         </div>
     );
 };
